@@ -2,7 +2,7 @@ package com.loltoulan.multipoint;
 
 import java.util.Arrays;
 
-public class MultiplePointer {
+public class RemoveDuplicates {
 
     public static void main(String[] args) {
         int[] nums = {1, 1,1, 2,2,3,3,3};
