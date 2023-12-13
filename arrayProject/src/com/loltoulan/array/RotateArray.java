@@ -1,4 +1,4 @@
-package com.loltoulan.multipoint;
+package com.loltoulan.array;
 
 import java.util.ArrayDeque;
 import java.util.Arrays;
