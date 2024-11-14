@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/InterviewClassic/InterviewClassic.iml" filepath="$PROJECT_DIR$/InterviewClassic/InterviewClassic.iml" />
       <module fileurl="file://$PROJECT_DIR$/algoProject.iml" filepath="$PROJECT_DIR$/algoProject.iml" />
-      <module fileurl="file://$PROJECT_DIR$/arrayProject/arrayProject.iml" filepath="$PROJECT_DIR$/arrayProject/arrayProject.iml" />
     </modules>
   </component>
 </project>
