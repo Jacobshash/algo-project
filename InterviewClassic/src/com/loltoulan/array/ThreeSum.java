@@ -16,12 +16,13 @@ public class ThreeSum {
         if (nums.length < 3) {
             return new ArrayList<>();
         }
-        List<Integer> list = Arrays.stream(nums).boxed().sorted().distinct().toList();
+
+        List<List<Integer>> result = new ArrayList<>();
+        Arrays.sort(nums);
+        List<Integer> list = Arrays.stream(nums).boxed().distinct().toList();
         if (list.size() == 1 && list.get(0) == target) {
             return List.of(Arrays.asList(0, 0, 0));
         }
-        List<List<Integer>> result = new ArrayList<>();
-        Arrays.sort(nums);
         for (int size = nums.length - 1; size > 0; size--) {
             int left = 0;
             int right = size - 1;
@@ -31,6 +32,7 @@ public class ThreeSum {
                 if (sum == target) {
                     result.add(Arrays.asList(nums[left], nums[right], current));
                     right--;
+                    left++;
                 }
                 if (sum < target) {
                     left++;
@@ -45,6 +47,7 @@ public class ThreeSum {
 
 
     public List<List<Integer>> threeSum(int[] nums) {
+        int target = 0;
         if (nums.length < 3 || nums.length > 30000) {
             return new ArrayList<>();
         }
@@ -52,12 +55,14 @@ public class ThreeSum {
         Arrays.sort(nums);
         // int[] nums = {0,0,0,0,0};
         for (int i = 0, len = nums.length; i < len; i++) {
-            if (i > 0 && nums[i] == nums[i - 1]) continue;
+            if (i > 0 && nums[i] == nums[i - 1]) {
+                continue;
+            }
             int left = i + 1;
             int right = len - 1;
             while (left < right) {
                 int sum = nums[right] + nums[left] + nums[i];
-                if (sum == 0) {
+                if (sum == target) {
                     list.add(Arrays.asList(nums[i], nums[left], nums[right]));
                     while (left < right && nums[left] == nums[left + 1]) {
                         left++;
@@ -67,9 +72,11 @@ public class ThreeSum {
                     }
                     left++;
                     right--;
-                } else if (sum > 0) right--;
-                else left++;
-
+                } else if (sum > target){
+                     right--;
+                } else {
+                    left++;
+                }
             }
         }
         return list;
