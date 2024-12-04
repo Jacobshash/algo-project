@@ -1,7 +1,5 @@
 package com.loltoulan.linkedlist;
 
-import java.util.List;
-
 public class AddTwoNumbers {
 
     public static void main(String[] args) {
@@ -60,22 +58,5 @@ public class AddTwoNumbers {
             item.next = new ListNode(1);
         }
         return result;
-    }
-}
-
-class ListNode {
-    int val;
-    ListNode next;
-
-    ListNode() {
-    }
-
-    ListNode(int val) {
-        this.val = val;
-    }
-
-    ListNode(int val, ListNode next) {
-        this.val = val;
-        this.next = next;
     }
 }
