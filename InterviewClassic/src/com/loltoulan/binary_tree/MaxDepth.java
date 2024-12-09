@@ -31,7 +31,7 @@ public class MaxDepth {
         root.right = new TreeNode(3);
         root.left.left = new TreeNode(4);
         root.right.right = new TreeNode(5);
-        System.out.println(maxDepth(root));
+        System.out.println(maxDepthFromDFS(root));
     }
 
     // 广度优先
