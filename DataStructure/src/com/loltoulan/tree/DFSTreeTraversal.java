@@ -14,6 +14,7 @@ public class DFSTreeTraversal {
         }
         dfs(root.left, sb);
         dfs(root.right, sb);
+        sb.append(root.val).append(",");
         return sb.toString();
     }
 
