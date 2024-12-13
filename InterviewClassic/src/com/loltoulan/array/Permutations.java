@@ -41,11 +41,15 @@ public class Permutations {
             result.add(new ArrayList<>(tempList));
         } else {
             for (int i = 0; i < nums.length; i++) {
-                if (used[i]) continue; // 如果已经使用过，则跳过
+                // 如果已经使用过，则跳过
+                if (used[i]) {
+                    continue;
+                }
                 used[i] = true;
                 tempList.add(nums[i]);
                 backtrack(nums, tempList, result, used);
-                used[i] = false; // 撤销选择
+                // 撤销选择
+                used[i] = false;
                 tempList.removeLast();
             }
         }
