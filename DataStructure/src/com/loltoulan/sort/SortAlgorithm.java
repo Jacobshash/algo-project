@@ -51,7 +51,7 @@ class BubbleSort{
      * @param arr 待排序数组
      */
     public static void bubbleSort(int[] arr){
-        System.out.println("before bubbleSort ==> " + Arrays.stream(arr).boxed().toList());
+        System.out.println("before bubbleSort \t ==> " + Arrays.stream(arr).boxed().toList());
         int length = arr.length;
         for (int i = 0; i < length; i++) {
             for (int j = i + 1; j < length; j++) {
@@ -62,7 +62,7 @@ class BubbleSort{
                 }
             }
         }
-        System.out.println("after bubbleSort ==> " + Arrays.stream(arr).boxed().toList());
+        System.out.println("after bubbleSort \t ==> " + Arrays.stream(arr).boxed().toList());
     }
 
 }
@@ -76,7 +76,7 @@ class SelectSort{
      * @param arr 待排序数组
      */
     public static void selectSort(int[] arr){
-        System.out.println("before selectSort ==> " + Arrays.stream(arr).boxed().toList());
+        System.out.println("before selectSort \t ==> " + Arrays.stream(arr).boxed().toList());
         int length = arr.length;
         for (int i = 0; i < length-1; i++) {
             int min = i;
@@ -91,7 +91,7 @@ class SelectSort{
                 arr[min] = temp;
             }
         }
-        System.out.println("after selectSort ==> " + Arrays.stream(arr).boxed().toList());
+        System.out.println("after selectSort \t ==> " + Arrays.stream(arr).boxed().toList());
     }
 
 }
@@ -99,8 +99,26 @@ class SelectSort{
 // 插入排序
 class InsertSort{
 
+    /**
+     * 时间复杂度 O(n^2) <br/>
+     * 空间复杂度 O(1) <br/>
+     * @param arr 待排序数组
+     */
     public static void insertSort(int[] arr){
-
+        System.out.println("before insertSort \t ==> " + Arrays.stream(arr).boxed().toList());
+        for (int i = 0; i < arr.length; i++) {
+            int j = i;
+            int temp = arr[i];
+            while (j > 0 && arr[j - 1] > temp) {
+                arr[j] = arr[j - 1];
+                j--;
+            }
+            // 存在比其小的数，插入
+            if (j != i) {
+                arr[j] = temp;
+            }
+        }
+        System.out.println("after insertSort \t ==> " + Arrays.stream(arr).boxed().toList());
     }
 
 }
