@@ -42,6 +42,16 @@ public class SortAlgorithm {
 
 }
 
+
+// 快速排序
+class QuickSort{
+
+    public static void quickSort(int[] arr){
+
+    }
+
+}
+
 // 冒泡排序
 class BubbleSort{
 
@@ -123,10 +133,38 @@ class InsertSort{
 
 }
 
-// 希尔排序
+// 希尔排序，本质是插入排序的一种优化
 class ShellSort{
 
+    /**
+     * 时间复杂度 最坏 O(n^2) 平均O(nlog^2 n) <br/>
+     * 空间复杂度 O(1) <br/>
+     * @param arr 待排序数组
+     */
     public static void shellSort(int[] arr){
+        System.out.println("before shellSort \t ==> " + Arrays.stream(arr).boxed().toList());
+        int length = arr.length;
+        int temp;
+        for (int step = length / 2; step >= 1; step /= 2) {
+            for (int i = step; i < length; i++) {
+                int j = i - step;
+                temp = arr[i];
+                while (j >= 0 && arr[j] > temp) {
+                    arr[j + step] = arr[j];
+                    j = j - step;
+                }
+                arr[j + step] = temp;
+            }
+        }
+        System.out.println("after shellSort \t ==> " + Arrays.stream(arr).boxed().toList());
+    }
+
+}
+
+// 二分插入排序
+class BinaryInsertSort{
+
+    public static void binaryInsertSort(int[] arr){
 
     }
 
@@ -136,15 +174,6 @@ class ShellSort{
 class MergeSort{
 
     public static void mergeSort(int[] arr){
-
-    }
-
-}
-
-// 快速排序
-class QuickSort{
-
-    public static void quickSort(int[] arr){
 
     }
 
@@ -186,11 +215,3 @@ class BucketSort{
 
 }
 
-// 二分插入排序
-class BinaryInsertSort{
-
-    public static void binaryInsertSort(int[] arr){
-
-    }
-
-}
