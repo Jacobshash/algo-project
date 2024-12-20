@@ -426,7 +426,7 @@ class RadixSort{
      */
     private static int getMaxDigit(int[] arr) {
         int maxValue = getMaxValue(arr);
-        return getNumLenght(maxValue);
+        return getNumLength(maxValue);
     }
 
     private static int getMaxValue(int[] arr) {
@@ -439,7 +439,7 @@ class RadixSort{
         return maxValue;
     }
 
-    protected static int getNumLenght(long num) {
+    protected static int getNumLength(long num) {
         if (num == 0) {
             return 1;
         }
