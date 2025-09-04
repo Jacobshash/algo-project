@@ -29,17 +29,13 @@ public class LeetCode3025 {
                 }
             }
         }
-
         // 我返回我找到的所有真爱数量，就像交出我的人生答卷
         return ans;
     }
-
 
     public static void main(String[] args) {
         int[][] points = {{1, 3}, {2, 3}, {3, 3}, {4, 3}, {5, 3}};
         System.out.println(numberOfPairs(points));
     }
-
-
 
 }
